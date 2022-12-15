@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nft {
+  width: 40vmin;
+  height: 60vmin;
+  background: white;
+  padding: 10vmin 20vmin;
+}
+
+.line {
+  font-family: monospace;
+  position: relative;
+  font-size: 6vmin;
+  color: black;
+  white-space: pre;
+}
+
+.word {
+  position: relative;
+  text-align: center;
+  font-size: 5vmin;
+  color: black;
+  margin-top: 1vmin;
+}
+
+.wonb {
+  background: green;
+}
+.wonf {
+  color: white;
+}
+.lostb {
+  background: black;
+}
+.lostf {
+  color: red;
+}
