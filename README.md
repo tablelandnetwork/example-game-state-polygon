@@ -16,13 +16,13 @@ A player can now call `guessLetter(tokenId, "x"). Because "x" is not in "secret"
 
 The state at each level is pushed to Tableland for rendering, query, search, etc. 
 
-## Example deployment
+## Example deployment (how to play)
 
 https://mumbai.polygonscan.com/address/0xb5fa5f64f811df209ef7cc431575870860b29cfb#writeProxyContract
 
 Use `safeMint` and `guessLetter` above to play.
 
-## Example game state table on Tableland
+## Example game state table on Tableland (how to view state)
 
 https://testnets.opensea.io/assets/mumbai/0x4b48841d4b32c4650e4abc117a03fe8b51f38f68/4448
 
@@ -32,7 +32,7 @@ You can query that state here,
 
 https://testnet.tableland.network/query?s=select%20*%20from%20game_store_80001_4448%20limit%201
 
-## Example NFT
+## Example NFT (how to visually see the game and game nfts)
 
 https://testnets.opensea.io/collection/tableland-game-state-example-v2
 
