@@ -10,9 +10,9 @@ You could also easily build a dapp for viewing leaderboards, open games, etc.
 
 ## Gameplay
 
-A user calls `safeMint(<addr>, "secret"). That user (<addr>) now owns an NFT for the game, awaiting people to guess "secret".
+A user calls `safeMint(addr, "secret"). That user (addr) now owns an NFT for the game, awaiting people to guess "secret".
 
-A player can now call `guessLetter(<tokenId>, "x"). Because "x" is not in "secret" one fail will be recorded. If 6 fails are recorded, the game ends and the NFT transfers back to the smart contract. If all the letters of the word of guessed before the game is over, the person submitting the final letter will get the winning NFT.
+A player can now call `guessLetter(tokenId, "x"). Because "x" is not in "secret" one fail will be recorded. If 6 fails are recorded, the game ends and the NFT transfers back to the smart contract. If all the letters of the word of guessed before the game is over, the person submitting the final letter will get the winning NFT.
 
 The state at each level is pushed to Tableland for rendering, query, search, etc. 
 
