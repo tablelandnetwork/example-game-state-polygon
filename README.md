@@ -18,7 +18,7 @@ The state at each level is pushed to Tableland for rendering, query, search, etc
 
 ## Example deployment (how to play)
 
-https://mumbai.polygonscan.com/address/0xb5fa5f64f811df209ef7cc431575870860b29cfb#writeProxyContract
+https://goerli.arbiscan.com/address/0x58d9Cd52d81d06Ec0818015F8FD4A3aDc8FCF45b#writeProxyContract
 
 Use `safeMint` and `guessLetter` above to play.
 
@@ -46,8 +46,8 @@ You must have a `.env` file with the following information
 
 ```
 PRIVATE_KEY={your wallet key with a balance of matic}
-POLYGONSCAN_API_KEY={your polyscan api key for pushing the abi}
-POLYGON_MUMBAI_API_KEY={your alchemy api key for mumbai}
+ARBISCAN_API_KEY={your polyscan api key for pushing the abi}
+ARBITRUM_GOERLI_API_KEY={your alchemy api key for mumbai}
 REPORT_GAS=true
 ```
 

@@ -6,10 +6,10 @@
     "local": "hardhat run --network localhost scripts/deploy.ts",
     "localup": "hardhat run --network localhost scripts/upgrade.ts",
     "deploy": "npm run _deploy && npm run verify",
-    "_deploy": "hardhat run --network polygon_mumbai scripts/deploy.ts",
+    "_deploy": "hardhat run --network arbitrum_goerli scripts/deploy.ts",
     "upgrade": "npm run _upgrade && npm run verify",
-    "_upgrade": "hardhat run --network polygon_mumbai scripts/upgrade.ts",
-    "verify": "source .polygon_mumbai.env && hardhat verify $CONTRACT --network polygon_mumbai",
+    "_upgrade": "hardhat run --network arbitrum_goerli scripts/upgrade.ts",
+    "verify": "source .arbitrum_goerli.env && hardhat verify $CONTRACT --network arbitrum_goerli",
     "prettier": "prettier '**/*.{ts,json,sol,md}' --check",
     "prettier:fix": "npm run prettier -- --write",
     "test": "hardhat test"

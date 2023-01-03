@@ -6,6 +6,7 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/utils/ERC721HolderUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721URIStorageUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/Base64Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
@@ -31,10 +32,10 @@ struct StoredData {
 }
 
 contract GameLevels is
-    ERC721URIStorageUpgradeable,
+    ERC721EnumerableUpgradeable,
+    ERC721HolderUpgradeable,
     OwnableUpgradeable,
-    UUPSUpgradeable,
-    ERC721HolderUpgradeable
+    UUPSUpgradeable
 {
     // An instance of the struct defined above.
     StoredData internal stored;
@@ -43,11 +44,9 @@ contract GameLevels is
     CountersUpgradeable.Counter private _tokenIdCounter;
 
     function initialize() public initializer {
-        __ERC721URIStorage_init();
         __ERC721_init("GameLevels", "GG_");
         __Ownable_init();
         __UUPSUpgradeable_init();
-        _baseURIString = "https://tableland.xyz/";
     }
 
     /**
@@ -383,9 +382,9 @@ contract GameLevels is
                     abi.encodePacked(
                         '{"name":"Tableland Game State Example",',
                         '"slug":"tableland-game-state",',
-                        '"description":"A game of hangman where each letter is guessed on chain and the state is managed in Tableland. Use the guessLetter method to send a letter guess to any token with an active game. Use safeMint to start a new game with your own word. Use the external website link to call that function on Polygonscan.",',
+                        '"description":"A game of hangman where each letter is guessed on chain and the state is managed in Tableland. Use the guessLetter method to send a letter guess to any token with an active game. Use safeMint to start a new game with your own word. Use the external website link to call that function on Arbiscan.",',
                         '"banner_image_url":"https://nftstorage.link/ipfs/bafkreiaovbl245aoe6fk24ad5s2uryy4o256dc7zhpl2hs7inybgybhfaa",',
-                        '"external_link":"https://mumbai.polygonscan.com/address/0x2f88a7a0d2d51a1523e52654390ad81f7c4e23f9#writeProxyContract",',
+                        '"external_link":"https://goerli.arbiscan.com/address/0x58d9Cd52d81d06Ec0818015F8FD4A3aDc8FCF45b#writeProxyContract",',
                         '"image_data":"https://nftstorage.link/ipfs/bafkreibahfxzpiarlfaes37bljy5tycvubo4gdzbtptpvc36iitnekukwe",',
                         '"image":"', // i'm not sure how often OS refreshes this (or ever)
                         collectionSvg(),
@@ -396,11 +395,11 @@ contract GameLevels is
 
     }
 
-    function totalSupply() public view returns (uint256) {
+    function totalSupply() override public view returns (uint256) {
       return _tokenIdCounter.current();
     }
 
-    function tokenByIndex(uint256 index) public pure returns (uint256) {
+    function tokenByIndex(uint256 index) override public pure returns (uint256) {
       return index;
     }
     
